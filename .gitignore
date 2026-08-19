@@ -1,0 +1,14 @@
+.idea/*
+!.idea/codeStyles/
+!.idea/codeStyles/**
+var/
+/stubs/
+/vendor/
+/composer.lock
+/.phpunit.cache/
+/.php-cs-fixer.cache
+*.session.json
+**/.tradernet/
+.env
+tradernet.ini
+.phpunit.result.cache

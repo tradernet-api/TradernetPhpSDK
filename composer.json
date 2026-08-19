@@ -1,0 +1,54 @@
+{
+    "name": "tradernet/sdk",
+    "description": "PHP SDK for the Tradernet public API V3: signed HTTP commands, SID session management and realtime WebSocket streams.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["tradernet", "freedom-finance", "trading", "broker", "api", "sdk"],
+    "homepage": "https://tradernet.com/tradernet-api/",
+    "authors": [
+        {
+            "name": "Tradernet API Support",
+            "email": "kostikov@tradernet.com",
+            "homepage": "https://tradernet.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "require-dev": {
+        "amphp/websocket-client": "^2.0",
+        "friendsofphp/php-cs-fixer": "^3.68",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpunit/phpunit": "^11.5",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "suggest": {
+        "amphp/websocket-client": "Required for realtime WebSocket streams (Ws\\Amp\\AmpWebSocketClient)",
+        "amphp/http-client": "Required for AmpTransport (non-blocking HTTP in Amp event loop)",
+        "vlucas/phpdotenv": "Convenient .env loading before Tradernet::fromEnv()"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tradernet\\Sdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tradernet\\Sdk\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "stan": "phpstan analyse --memory-limit=512M",
+        "cs": "php-cs-fixer fix --dry-run --diff"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
